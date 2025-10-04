@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSU MBA Department - AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-placeholder">DSU</div>
+                    <div class="header-text">
+                        <h1>{{ university }}</h1>
+                        <p class="subtitle">{{ department }} - AI Assistant</p>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <div class="info-icon">ℹ️</div>
+                <div class="info-text">
+                    <strong>Welcome!</strong> Ask me anything about the MBA program, admissions, courses, faculty, or department policies.
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <!-- Welcome Message -->
+                <div class="message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Hello! I'm the DSU MBA Department AI Assistant. I can help you with information about:
+                            <ul>
+                                <li>MBA Program Details</li>
+                                <li>Admission Requirements</li>
+                                <li>Course Curriculum</li>
+                                <li>Faculty Information</li>
+                                <li>Department Policies</li>
+                            </ul>
+                            Feel free to ask me anything!
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-container">
+                    <textarea 
+                        id="questionInput" 
+                        placeholder="Type your question here..."
+                        rows="1"
+                    ></textarea>
+                    <button id="sendButton" class="send-button">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="hint">💡 Try: "What are the MBA admission requirements?"</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by Llama 3.2 | Built for {{ university }}</p>
+            <p class="disclaimer">This is an AI assistant. Please verify important information with official sources.</p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <p>Processing your question...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
