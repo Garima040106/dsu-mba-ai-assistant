@@ -2,12 +2,6 @@
 
 LightGBM + XGBoost ensemble with feature engineering, leak-free target encoding, and Optuna tuning. Built for high-performance tabular regression on time- and location-driven traffic data.
 
-## TL;DR
-
-- Task: traffic demand regression.
-- Strategy: LightGBM primary + XGBoost secondary, blended using OOF predictions.
-- Highlights: geohash decoding, cyclical time features, CV target encoding, GPU training, blend optimization.
-
 ## Requirements
 
 ![pandas>=2.0.0](https://img.shields.io/badge/pandas-%3E%3D2.0.0-150458)
@@ -122,5 +116,5 @@ OUTPUT_DIR = '/home/ubuntu/traffic_demand/outputs'
 
 ## Team
 
-Nikhil Verma, Garima Varma, Mohit Srivastava, Shreyash
+Nikhil Verma, Garima Varma, Mohit Srivastava, Shreyash Raj
 
