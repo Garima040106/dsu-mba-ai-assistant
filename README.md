@@ -1,12 +1,22 @@
-# Traffic Demand Prediction - Hackathon ML Pipeline
+# Traffic Demand Prediction - ML Pipeline
 
-LightGBM + XGBoost ensemble with aggressive feature engineering, leak-free target encoding, and Optuna tuning. Built for high-performance tabular regression on time- and location-driven traffic data.
+LightGBM + XGBoost ensemble with feature engineering, leak-free target encoding, and Optuna tuning. Built for high-performance tabular regression on time- and location-driven traffic data.
 
 ## TL;DR
 
 - Task: traffic demand regression.
 - Strategy: LightGBM primary + XGBoost secondary, blended using OOF predictions.
-- Highlights: geohash decoding, cyclical time features, CV target encoding, GPU training.
+- Highlights: geohash decoding, cyclical time features, CV target encoding, GPU training, blend optimization.
+
+## Requirements
+
+![pandas>=2.0.0](https://img.shields.io/badge/pandas-%3E%3D2.0.0-150458)
+![numpy>=1.24.0](https://img.shields.io/badge/numpy-%3E%3D1.24.0-013243)
+![lightgbm](https://img.shields.io/badge/lightgbm-required-2C5C7C)
+![xgboost](https://img.shields.io/badge/xgboost-required-6B2E2E)
+![optuna](https://img.shields.io/badge/optuna-required-2A5CAA)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-required-F7931E)
+![scipy](https://img.shields.io/badge/scipy-required-8CAAE6)
 
 ## Architecture at a Glance
 
@@ -100,7 +110,8 @@ OUTPUT_DIR = '/home/ubuntu/traffic_demand/outputs'
 ## Results
 
 - OOF $R^2$ is printed after CV training.
-- Blended $R^2$ is printed after the ensemble step.
+- XGBoost OOF $R^2$ is printed after XGBoost training.
+- Blended $R^2$ and competition score are printed after the ensemble step.
 - Final submission is saved to `OUTPUT_DIR/submission.csv`.
 
 ## Reproducibility Notes
@@ -108,3 +119,8 @@ OUTPUT_DIR = '/home/ubuntu/traffic_demand/outputs'
 - Fixed random seeds (`random_state=42`).
 - Target encoding uses 5-fold CV to prevent leakage.
 - GPU settings enabled for both LightGBM and XGBoost.
+
+## Team
+
+Nikhil Verma, Garima Varma, Mohit Srivastava, Shreyash
+
